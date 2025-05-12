@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kitap Mağazası</title>
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/bootstrap/dist/js/bootstrap.bundle.min.js" />
+  </head>
+  <body class="text-light">
+    <header>
+      <nav class="navbar navbar-expand-lg border-bottom border-body p-3 ozelnav">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/">Kitap</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/">Ana Sayfa</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/roman">Roman</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/hikaye">Hikaye</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/biyografi">Biyografi</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/din">Din</a>
+              </li>
+              <!--<li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/kitapAyarlama">Kitap Ayarlama</a>
+              </li>-->
+            </ul>
+          </div>
+          <button class="btn btn-outline-secondary" onclick="degistirTema()">
+            🌗
+          </button>          
+        </div>
+      </nav>
+    </header>
+
+    <div class="container mt-3">
+      <main role="main" class="p-2"><%- body %></main>
+    </div>
+    
+    <footer class="mt-auto mb-3">
+      <hr class="baslik">
+      <div class="container baslik text-center">
+        &copy; 2025 - Kitap Mağazası</a>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const tema = localStorage.getItem("theme") || "light";
+    document.documentElement.setAttribute("data-bs-theme", tema);
+  });
+
+  function degistirTema() {
+    const eskiTema = document.documentElement.getAttribute("data-bs-theme");
+    const yeniTema = eskiTema === "dark" ? "light" : "dark";
+    document.documentElement.setAttribute("data-bs-theme", yeniTema);
+    localStorage.setItem("theme", yeniTema);
+  }
+</script>

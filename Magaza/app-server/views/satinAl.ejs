@@ -1,0 +1,76 @@
+<h1 class="baslik"><%= kitap.ad %> Satın Al</h1>
+
+<div
+  id="kitapVerisi"
+  data-fiyat="<%= kitap.fiyat %>"
+  data-adet="<%= kitap.adet %>"
+></div>
+
+<div class="container mt-5">
+  <form action="/<%= kitap.turu %>/<%= kitap.resimUrl%>/satinAl" method="POST">
+    <div class="mb-3">
+      <label for="ad" class="form-label">Adınız</label>
+      <input type="text" name="ad" id="ad" class="form-control" required />
+    </div>
+
+    <div class="mb-3">
+      <label for="email" class="form-label">E-posta</label>
+      <input
+        type="email"
+        name="email"
+        id="email"
+        class="form-control"
+        required
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="adres" class="form-label">Adres</label>
+      <textarea
+        name="adres"
+        id="adres"
+        class="form-control"
+        rows="3"
+        required
+      ></textarea>
+    </div>
+
+    <div class="mb-3">
+      <label for="adet" class="form-label">Adet</label>
+      <input
+        type="number"
+        name="adet"
+        id="adet"
+        min="1"
+        max="<%= kitap.adet %>"
+        class="form-control"
+        value="1"
+        required
+      />
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Toplam Fiyat:</label>
+      <p id="toplamFiyat" class="fs-5"><%= kitap.fiyat %> TL</p>
+    </div>
+
+    <button type="submit" class="btn btn-success">Satın Al</button>
+  </form>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const kitapVerisi = document.getElementById("kitapVerisi");
+    const fiyat = parseFloat(kitapVerisi.dataset.fiyat);
+    const adetInput = document.getElementById("adet");
+    const toplamFiyat = document.getElementById("toplamFiyat");
+
+    function hesapla() {
+      const adet = parseInt(adetInput.value) || 1;
+      toplamFiyat.textContent = (adet * fiyat).toFixed(2) + " TL";
+    }
+
+    adetInput.addEventListener("input", hesapla);
+    hesapla();
+  });
+</script>

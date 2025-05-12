@@ -1,0 +1,33 @@
+<h1 class="baslik"><%= kitap.ad %></h1>
+<div class="container my-5">
+  <div class="row">
+    <div class="col-4">
+      <img
+        src="/images/<%= kitap.resimUrl %>.png"
+        class="img-fluid mb-3"
+        alt="Kitap Resmi"
+      />
+    </div>
+    <div class="col-8">
+      <p><%= kitap.yazi %></p>
+      <p><strong>Yazar:</strong> <%= kitap.yazari %></p>
+      <p>
+        <strong>Türü:</strong> <%= kitap.turu.charAt(0).toUpperCase() +
+        kitap.turu.slice(1).toLowerCase() %>
+      </p>
+      <p><strong>Sayfa Sayısı:</strong> <%= kitap.sayfaSayisi %></p>
+      <p><strong>Konusu:</strong> <%= kitap.konu %></p>
+      <p><strong>Fiyat:</strong> <%= kitap.fiyat %> ₺</p>
+      <p><strong>Stok:</strong> <%= kitap.adet %> adet</p>
+
+      <form
+        action="/<%= kitap.turu %>/<%= kitap.resimUrl %>/satinAl"
+        method="get"
+      >
+        <button type="submit" class="btn btn-success form-control">
+          Satın Al
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

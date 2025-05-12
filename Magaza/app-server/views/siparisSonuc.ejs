@@ -1,0 +1,18 @@
+<div class="container mt-5">
+  <div class="alert alert-success">
+    <h4 class="alert-heading">Siparişiniz başarıyla verildi!</h4>
+    <p>
+      <strong><%= ad %></strong>, <strong><%= kitap.ad %></strong> adlı kitaptan
+      <strong><%= adet %></strong> adet satın aldınız.
+    </p>
+    <p>Toplam Tutar: <strong><%= toplamFiyat %> TL</strong></p>
+    <hr />
+    <p class="mb-0">En kısa sürede adresinize gönderilecektir.</p>
+  </div>
+
+  <form action="/" method="get">
+    <button type="submit" class="btn btn-primary form-control">
+      Ana Sayfaya Dön
+    </button>
+  </form>
+</div>

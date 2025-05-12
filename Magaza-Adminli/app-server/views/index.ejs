@@ -1,0 +1,25 @@
+<h1 class="baslik">Ana Sayfa</h1>
+<div class="container">
+  <div class="row">
+    <% kitaplar.forEach(kitap => { %>
+    <div class="col-3 mb-3">
+      <div class="card">
+        <img
+          src="/images/<%= kitap.resimUrl %>.png"
+          class="card-img-top"
+          alt="Kitap Resmi"
+        />
+        <div class="card-body">
+          <h5 class="card-title"><%= kitap.ad %></h5>
+          <p class="card-text">Yazar: <%= kitap.yazari %></p>
+          <a
+            href="/<%= kitap.turu %>/<%= kitap.resimUrl %>"
+            class="btn btn-primary"
+            >Daha Fazla Bilgi</a
+          >
+        </div>
+      </div>
+    </div>
+    <% }) %>
+  </div>
+</div>

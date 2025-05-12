@@ -1,0 +1,25 @@
+<h1 class="baslik">
+  <%= turu.charAt(0).toUpperCase() + turu.slice(1).toLowerCase() %> Kitapları
+</h1>
+<div class="container">
+  <div class="row">
+    <% kitaplar.forEach(k => { %>
+    <div class="col-3 mb-3">
+      <div class="card">
+        <img
+          src="/images/<%= k.resimUrl %>.png"
+          class="card-img-top"
+          alt="Kitap Resmi"
+        />
+        <div class="card-body">
+          <h5 class="card-title"><%= k.ad %></h5>
+          <p class="card-text">Yazar: <%= k.yazari %></p>
+          <a href="/<%= k.turu %>/<%= k.resimUrl %>" class="btn btn-primary"
+            >Daha Fazla Bilgi</a
+          >
+        </div>
+      </div>
+    </div>
+    <% }) %>
+  </div>
+</div>

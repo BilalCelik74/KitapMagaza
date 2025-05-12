@@ -1,0 +1,77 @@
+<div class="container my-5">
+  <h1 class="baslik">Yeni Kitap Ekle</h1>
+
+  <form action="/kitapAyarlama" method="POST">
+    <div class="mb-3">
+      <label for="ad" class="form-label">Ad</label>
+      <input type="text" class="form-control" id="ad" name="ad" required />
+    </div>
+    <div class="mb-3">
+      <label for="turu" class="form-label">Tür</label>
+      <input type="text" class="form-control" id="turu" name="turu" required />
+    </div>
+    <div class="mb-3">
+      <label for="yazari" class="form-label">Yazar</label>
+      <input
+        type="text"
+        class="form-control"
+        id="yazari"
+        name="yazari"
+        required
+      />
+    </div>
+    <div class="mb-3">
+      <label for="sayfaSayisi" class="form-label">Sayfa Sayısı</label>
+      <input
+        type="number"
+        class="form-control"
+        id="sayfaSayisi"
+        name="sayfaSayisi"
+        required
+      />
+    </div>
+    <div class="mb-3">
+      <label for="yazi" class="form-label">Yazı</label>
+      <textarea class="form-control" id="yazi" name="yazi" rows="3"></textarea>
+    </div>
+    <div class="mb-3">
+      <label for="konu" class="form-label">Konu</label>
+      <input type="text" class="form-control" id="konu" name="konu" required />
+    </div>
+    <div class="mb-3">
+      <label for="resimUrl" class="form-label">Resim URL</label>
+      <input type="text" class="form-control" id="resimUrl" name="resimUrl" />
+    </div>
+    <div class="mb-3">
+      <label for="fiyat" class="form-label">Fiyat</label>
+      <input
+        type="number"
+        class="form-control"
+        id="fiyat"
+        name="fiyat"
+        required
+      />
+    </div>
+    <div class="mb-3">
+      <label for="adet" class="form-label">Adet</label>
+      <input
+        type="number"
+        class="form-control"
+        id="adet"
+        name="adet"
+        required
+      />
+    </div>
+    <div class="mb-3 form-check">
+      <input
+        type="checkbox"
+        class="form-check-input"
+        id="isHome"
+        name="isHome"
+      />
+      <label class="form-check-label" for="isHome">Anasayfada Göster</label>
+    </div>
+
+    <button type="submit" class="btn btn-primary form-control">Ekle</button>
+  </form>
+</div>
